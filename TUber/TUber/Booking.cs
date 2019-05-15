@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TUber
 {
-    class Booking
+    public class Booking
     {
         private string _tutorName = "";
         private string _studentName = "";
@@ -20,12 +20,13 @@ namespace TUber
             _price = 0;
         }
 
-        public void CreateBooking(string aTutorName, string aStudentName, int aPrice)
+        public Booking(string aTutorName, string aStudentName, int aPrice)
         {
             _tutorName = aTutorName;
             _studentName = aStudentName;
             _price = aPrice;
         }
+
 
         public string StudentName
         {

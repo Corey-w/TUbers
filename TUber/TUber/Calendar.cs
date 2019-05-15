@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 
 namespace TUber
 {
-    class Calendar
+    public class Calendar
     {
         //enumeration for the days of the week, the value refers to its position in the Days array
-        public enum Weekday
-        {
-            monday = 0,
-            tuesday = 1,
-            wednesday = 2,
-            thursday = 3,
-            friday = 4
-        }
+
         private Day[] Days= new Day[5];
 
         public Calendar()
@@ -37,12 +30,12 @@ namespace TUber
                 string[] lContent = DataAccess.Read(aFileName);
                 int i = 1;
                 int k = 0;
-                Booking lBooking = new Booking();
+
                 foreach (Day aDay in Days)
                 {
                     while (i < System.Convert.ToInt32(lContent[0])*3)
                     {
-                        lBooking.CreateBooking(lContent[i], lContent[i + 1], System.Convert.ToInt32(lContent[i + 2]));
+                        Booking lBooking = new Booking(lContent[i], lContent[i + 1], System.Convert.ToInt32(lContent[i + 2]));
                         aDay.AddBookings(lBooking);
                         i += 3;
                     }
@@ -79,8 +72,7 @@ namespace TUber
         //Adds booking under the tutors name and the students on a given day. Stores price.
         public void  AddBooking(string aTutorName, string aUserName, int aPrice, Weekday aDay)
         {
-            Booking lBooking = new Booking();
-            lBooking.CreateBooking(aTutorName, aUserName, aPrice);
+            Booking lBooking = new Booking(aTutorName, aUserName, aPrice);
             Days[(int)aDay].AddBookings(lBooking);
         }
 

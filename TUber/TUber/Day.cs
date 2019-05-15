@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace TUber
 {
-    class Day
+    public class Day
     {
         private List<Booking> _bookings = new List<Booking>();
         private int _numBookings;
+        private Weekday _name;
 
         public Day()
         {
             _numBookings = 0;
+            _name = Weekday.monday;
+        }
+
+        public Day(Weekday aName)
+        {
+            _name = aName;
         }
 
         public int NumBookings()

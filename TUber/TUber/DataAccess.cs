@@ -8,7 +8,7 @@ using System.IO;
 
 namespace TUber
 {
-    class DataAccess
+    public class DataAccess
     {
 
         //Checks for file/database exists

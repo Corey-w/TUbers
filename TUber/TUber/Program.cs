@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TUber
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Calendar lCalendar = new Calendar();
-            Calendar.Weekday lWeekDay = Calendar.Weekday.wednesday;
+            Weekday lWeekDay = Weekday.wednesday;
 
             //no file path saves in Debug
             string lFileName = "database.txt";
