@@ -16,10 +16,10 @@ namespace TUberTest
         {
             Calendar lCalendar = new Calendar();
             lCalendar.AddBooking(lTutorName, lStudentName, lPrice, lWeekDay);
-            string lFileName = "DataBase.txt";
+            string lFileName = "database.txt";
             lCalendar.SaveDays(lFileName);
             Calendar lNewCalendar = new Calendar();
-            lNewCalendar.LoadDays("DataBase.txt");
+            lNewCalendar.LoadDays("database.txt");
 
             Booking lBookingOld = lCalendar.GetBookings(lTutorName, lWeekDay, true);
             Booking lBookingNew = lNewCalendar.GetBookings(lTutorName, lWeekDay, true);
