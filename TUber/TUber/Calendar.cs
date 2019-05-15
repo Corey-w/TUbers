@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TUber
 {
@@ -18,6 +19,37 @@ namespace TUber
                 Days[i] = new Day();
         }
 
+        /*public void LoadDays(string aFileName)
+        {
+            StreamReader reader = new StreamReader(aFileName);
+            try
+            {
+                using (reader)
+                {
+                    while (reader.Peek() > -1)
+                    {
+                        foreach (Day aDay in Days)
+                        {
+                            string numofbookings = reader.ReadLine();
+
+                            for (int i = 0; i < Convert.ToInt32(numofbookings); i++)
+                            {
+                                string student, tutor, price;
+                                tutor = reader.ReadLine();
+                                student = reader.ReadLine();
+                                price = reader.ReadLine();
+                                aDay.AddBookings(new Booking(tutor, student, Convert.ToInt32(reader.ReadLine())));
+                            }
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                reader.Close();
+            }
+
+        }*/
         /*Loads saved data into the Days array
         Format: 
         First line declares how many bookings on the day
@@ -33,7 +65,7 @@ namespace TUber
 
                 foreach (Day aDay in Days)
                 {
-                    while (i < System.Convert.ToInt32(lContent[0])*3)
+                    while (i < k + System.Convert.ToInt32(lContent[k]) * 3)
                     {
                         Booking lBooking = new Booking(lContent[i], lContent[i + 1], System.Convert.ToInt32(lContent[i + 2]));
                         aDay.AddBookings(lBooking);
@@ -45,6 +77,7 @@ namespace TUber
             }
         }
 
+        /*
         public void SaveDays(string aFileName)
         {
             List <string> lContent = new List<string>();
@@ -67,6 +100,34 @@ namespace TUber
             }
             DataAccess.Write(aFileName, lContent);
          
+        }
+        */
+        public void SaveDays(string aFileName)
+        {
+            StreamWriter writer = new StreamWriter(aFileName);
+            try
+            {
+                using (writer)
+                {
+                    foreach (Day aDay in Days)
+                    {
+                        writer.WriteLine(aDay.NumBookings().ToString());
+                        List<Booking> CurrentBooking = aDay.getAllBookings();
+                        foreach (Booking aBooking in CurrentBooking)
+                        {
+                                //save booking information
+                            writer.WriteLine(aBooking.TutorName);
+                            writer.WriteLine(aBooking.StudentName);
+                            writer.WriteLine(aBooking.Price.ToString());
+                        }
+                    }
+                }
+            }
+
+            finally
+            {
+                writer.Close();
+            }
         }
 
         //Adds booking under the tutors name and the students on a given day. Stores price.

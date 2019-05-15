@@ -13,8 +13,11 @@ namespace TUber
             Calendar lCalendar = new Calendar();
             Weekday lWeekDay = Weekday.wednesday;
 
+
             //no file path saves in Debug
             string lFileName = "database.txt";
+
+            Console.WriteLine(DataAccess.Check(lFileName));
 
             //Loads bookings from textfile into days
             lCalendar.LoadDays(lFileName);

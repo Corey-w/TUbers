@@ -9,3 +9,5 @@ C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUb
 C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUber.AssemblyInfo.cs
 C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUber.dll
 C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUber.pdb
+C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUber.csproj.GenerateResource.cache
+C:\Users\hjjef\Documents\Projects\TUbers\TUber\TUber\obj\Debug\netcoreapp2.1\TUber.Properties.Resources.resources
