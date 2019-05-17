@@ -22,7 +22,6 @@ namespace TUber
         public static string[] Read(string afileName)
         {
             string[] lines = File.ReadAllLines(afileName);
-           
             return lines;
         }
 

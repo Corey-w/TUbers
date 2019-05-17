@@ -10,6 +10,29 @@ namespace TUber
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to TUber\n");
+            Console.WriteLine("Are you a student or tutor? (y/n)\n");
+
+            char isTutor = (char)Console.Read();
+
+            Console.WriteLine("Please Enter a Username: \n");
+
+            string username = Console.ReadLine();
+
+            if(isTutor == 'y')
+            {
+
+            }
+            else if(isTutor == 'n')
+            {
+
+            }
+            else
+            {
+
+            }
+
+            /*
             Calendar lCalendar = new Calendar();
             Weekday lWeekDay = Weekday.wednesday;
 
@@ -28,7 +51,8 @@ namespace TUber
 
             //Save to textfile
             lCalendar.SaveDays(lFileName);
-            Console.ReadLine();            
+            Console.ReadLine();  
+            */
         }
     }
 }
