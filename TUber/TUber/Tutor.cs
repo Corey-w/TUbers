@@ -13,10 +13,12 @@ namespace TUber
         {
         }
 
+        /*
         public string LoadTutor()
         {
             return UserName + " teaches " + mySubject + " and charges " + (fPrice) + " per tute.";
         }
+        */
 
         public void AddSubject(Subject aSubject)
         {
