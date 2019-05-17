@@ -1,2 +1,2 @@
 language: csharp
-solution: TUber.sln
+solution: TUber/TUber.sln
