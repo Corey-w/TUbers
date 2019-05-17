@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{BB12EB3A-3824-43E5-BCF4-185185451862}|Default">
+  <MonoDevelop.Ide.ItemProperties.TUber PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TUber/Calendar.cs">
+    <Files>
+      <File FileName="TUberTest/BookingTest.cs" Line="1" Column="1" />
+      <File FileName="TUber/Calendar.cs" Line="1" Column="1" />
+      <File FileName="TUber/Program.cs" Line="1" Column="1" />
+      <File FileName="TUberTest/TestCalendar.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
