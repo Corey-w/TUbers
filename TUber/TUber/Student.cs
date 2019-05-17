@@ -9,5 +9,10 @@ namespace TUber
         private string userName;
 
         public Student(string aName) : base (aName) {}
+
+        public override bool Book(Calendar aCalendar)
+        {
+            return true;
+        }
     }
 }

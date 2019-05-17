@@ -151,10 +151,11 @@ namespace TUber
         {
                 return (Days[(int)aDay].getBooking(aUserName, aIsTutor));
         }
-
+        /*
         public void PrintCalendar()
         {
             
         }
+        */
     }
 }

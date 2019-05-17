@@ -13,9 +13,18 @@ namespace TUber
             userName = aName;
         }
 
-        public virtual string GetUser()
+        public string UserName
         {
-            return userName;
+            get
+            {
+                return userName;
+            }
+            set
+            {
+                userName = value;
+            }
         }
+
+        public abstract bool Book(Calendar aCalendar);
     }
 }

@@ -1,10 +1,8 @@
 ﻿using System;
 namespace TUber
 {
-    public class Globals
+    public static class Globals
     {
-        public Globals()
-        {
-        }
+        public const String FILE_NAME = "database.txt"; // Unmodifiable
     }
 }

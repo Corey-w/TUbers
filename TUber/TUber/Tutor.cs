@@ -6,8 +6,7 @@ namespace TUber
 {
     public class Tutor : User
     {
-        private string userName;
-        private Subject mySubject;
+        private List<Subject> mySubject;
         private int fPrice;
 
         public Tutor(string aName) : base (aName)
@@ -16,24 +15,24 @@ namespace TUber
 
         public string LoadTutor()
         {
-            return userName + " teaches " + mySubject + " and charges " + (fPrice) + " per tute.";
+            return UserName + " teaches " + mySubject + " and charges " + (fPrice) + " per tute.";
         }
 
         public void AddSubject(Subject aSubject)
         {
-            mySubject = aSubject;
+            mySubject.Add(aSubject);
         } 
 
-        public int SetPrice
+        public int Price
         {
+            get { return fPrice; }
+
             set { fPrice = value; }
         }
 
-        public override string GetUser()
+        public override bool Book(Calendar aCalendar)
         {
-            return userName;
+            return true;
         }
     }
-
-}
 }
