@@ -3,6 +3,7 @@ namespace TUber
 {
     public static class Globals
     {
-        public const String FILE_NAME = "database.txt"; // Unmodifiable
+        public const String FILE_NAME = "database.txt";  // Unmodifiable
+        public const String TEST_FILE_NAME = "testdatabase.txt";  // Unmodifiable
     }
 }

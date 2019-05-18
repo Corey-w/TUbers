@@ -15,8 +15,28 @@ namespace TUber
 
         public Calendar()
         {
-            for (int i = 0; i < 5; i++) 
-                Days[i] = new Day();
+            for (int i = 0; i < 5; i++)
+                switch (i)
+                {
+                    case 0:
+                        Days[i] = new Day(Weekday.Monday);
+                        break;
+                    case 1:
+                        Days[i] = new Day(Weekday.Tuesday);
+                        break;
+                    case 2:
+                        Days[i] = new Day(Weekday.Wednesday);
+                        break;
+                    case 3:
+                        Days[i] = new Day(Weekday.Thursday);
+                        break;
+                    case 4:
+                        Days[i] = new Day(Weekday.Friday);
+                        break;
+                    default:
+                        Days[i] = new Day();
+                        break;
+                }
         }
 
         /*
@@ -78,7 +98,8 @@ namespace TUber
             {
                 writer.Close();
             }
-        }*/
+        }
+        */
 
         /*Loads saved data into the Days array
         Format: 
@@ -131,7 +152,7 @@ namespace TUber
             DataAccess.Write(aFileName, lContent);
          
         }
-
+        
         //Adds booking under the tutors name and the students on a given day. Stores price.
         public void  AddBooking(string aTutorName, string aUserName, int aPrice, Weekday aDay)
         {
@@ -149,13 +170,27 @@ namespace TUber
         //Returns the Bookings for a given day and username. If the User is not a tutor, set aIsTutor to false.
         public Booking GetBookings(string aUserName, Weekday aDay, Boolean aIsTutor)
         {
-                return (Days[(int)aDay].getBooking(aUserName, aIsTutor));
+             return (Days[(int)aDay].getBooking(aUserName, aIsTutor));
         }
-        /*
-        public void PrintCalendar()
+
+        public void RemoveBooking(string aUsername, Weekday aDay, bool isTutor)
         {
-            
+            Days[(int)aDay].RemoveBooking(aUsername, isTutor);
         }
-        */
+        
+        public void Print()
+        {
+            foreach(Day aDay in Days)
+            {
+                if (aDay.NumBookings() != 0)
+                {
+                    Console.Write(aDay.Name + ": ");
+                    foreach (Booking aBooking in aDay.getAllBookings())
+                    {
+                        aBooking.Print();
+                    }
+                }
+            }
+        }
     }
 }
