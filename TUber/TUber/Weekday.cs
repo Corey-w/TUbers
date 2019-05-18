@@ -34,6 +34,21 @@ namespace TUber
                 case "friday":
                     return Weekday.Friday;
 
+                case "Monday":
+                    return Weekday.Monday;
+
+                case "Tuesday":
+                    return Weekday.Tuesday;
+
+                case "Wednesday":
+                    return Weekday.Wednesday;
+
+                case "Thursday":
+                    return Weekday.Thursday;
+
+                case "Friday":
+                    return Weekday.Friday;
+
                 default:
                     return Weekday.Monday;
             }
