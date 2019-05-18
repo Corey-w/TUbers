@@ -10,9 +10,6 @@ namespace TUber
     {
         static void Main(string[] args)
         {
-
-            bool endprogram = false;
-            bool endsession = false;
             bool isTutor = false;
             /*
             Calendar lCalendar = new Calendar();
@@ -20,11 +17,10 @@ namespace TUber
             lCalendar.AddBooking("Corey", "Ryan", 60, Weekday.Wednesday);
             lCalendar.AddBooking("Henry", "Aaron", 24, Weekday.Monday);
             */
-            while (!endprogram)
+            while (!Globals.END_PROGRAM)
             {
                 {
-
-                    endsession = false;
+                    Globals.END_SESSION = false;
 
                     Console.WriteLine("Welcome to TUber\n");
                     Console.WriteLine("Pick an option: \n1. Tutor Login\n2. Student Login");
@@ -55,7 +51,7 @@ namespace TUber
                     Calendar lCalendar = new Calendar();
                     lCalendar.LoadDays(Globals.FILE_NAME);
 
-                    while (!endsession)
+                    while (!Globals.END_SESSION)
                     {
                         Console.WriteLine("Current Schedule: \n");
                         lCalendar.Print();
@@ -102,12 +98,12 @@ namespace TUber
                         choice = Convert.ToInt32(Console.ReadLine());
                         if (choice == 3)
                         {
-                            endsession = true;
-                            endprogram = true;
+                            Globals.END_SESSION = true;
+                            Globals.END_PROGRAM = true;
                         }
                         else if (choice == 2)
                         {
-                            endsession = true;
+                            Globals.END_SESSION = true;
                         }
                     }
                 }
