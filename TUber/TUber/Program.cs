@@ -41,22 +41,19 @@ namespace TUber
 
             Console.WriteLine("Do you want to make a booking? \n");
 
-
-
-
             //no file path saves in Debug
 
             //Console.WriteLine(DataAccess.Check(Globals.FILE_NAME));
 
             //Loads bookings from textfile into days
-            lCalendar.LoadDays(Globals.FILE_NAME);
+            lCalendar.LoadDays(Globals.BOOKINGS_FILE_NAME);
 
             //Add Booking
             //lCalendar.AddBooking("Some Tutor", "Some User", 20, lWeekDay);
             Console.WriteLine("saving....");
 
             //Save to textfile
-            lCalendar.SaveDays(Globals.FILE_NAME);
+            lCalendar.SaveDays(Globals.BOOKINGS_FILE_NAME);
             Console.ReadLine();  
         }
     }

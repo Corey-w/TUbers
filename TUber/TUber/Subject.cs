@@ -8,7 +8,7 @@ namespace TUber
     {
         Science,
         Law,
-        Enlgish,
+        English,
         Math
     }
 }

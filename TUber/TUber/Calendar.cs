@@ -11,11 +11,12 @@ namespace TUber
     {
         //enumeration for the days of the week, the value refers to its position in the Days array
 
-        private Day[] Days= new Day[5];
+        private Day[] Days = new Day[5];
+        private List<Tutor> Tutors = new List<Tutor>();
 
         public Calendar()
         {
-            for (int i = 0; i < 5; i++) 
+            for (int i = 0; i < 5; i++)
                 Days[i] = new Day();
         }
 
@@ -107,17 +108,17 @@ namespace TUber
             }
         }
 
- 
+
         public void SaveDays(string aFileName)
         {
-            List <string> lContent = new List<string>();
+            List<string> lContent = new List<string>();
             foreach (Day aDay in Days)
             {
                 {
                     //save number of bookings for that day
                     lContent.Add(aDay.NumBookings().ToString());
 
-                    List <Booking> CurrentBooking = aDay.getAllBookings();
+                    List<Booking> CurrentBooking = aDay.getAllBookings();
                     foreach (Booking aBooking in CurrentBooking)
                     {
                         //save booking information
@@ -129,7 +130,7 @@ namespace TUber
                 }
             }
             DataAccess.Write(aFileName, lContent);
-         
+
         }
 
         //Adds booking under the tutors name and the students on a given day. Stores price.
@@ -151,11 +152,96 @@ namespace TUber
         {
                 return (Days[(int)aDay].getBooking(aUserName, aIsTutor));
         }
+
+
+        public void LoadTutors(string aFileName)
+        {
+
+            if (DataAccess.Check(aFileName) == true)
+            {
+                string[] lContent = DataAccess.Read(aFileName);
+                int numberOfTutors = 0;
+                int numberOfSubjects = 0;
+                int line = 1;
+                Subject lSubject;
+
+                while (numberOfTutors < Convert.ToInt32(lContent[0]))
+                {
+                    numberOfSubjects = Convert.ToInt32(lContent[line]) + line + 3;
+                    Tutor lTutor = new Tutor(lContent[line + 1])
+                    {
+                        Price = ((Convert.ToInt32(lContent[line + 2])))
+                    };
+
+                    line += 3;
+
+                    while (line < numberOfSubjects)
+                    {
+                        lSubject = (Subject)Convert.ToInt32(lContent[line]);
+                        lTutor.AddSubject(lSubject);
+                        line++;
+                    }
+                    numberOfTutors += 1;
+                    Tutors.Add(lTutor);
+                }
+            }
+        }
+
+
+        //saves tutors
+        public void SaveTutors(string aFileName)
+        {
+
+            List<string> lContent = new List<string>();
+            lContent.Add(Convert.ToString(Tutors.Count()));
+
+            foreach (Tutor lTutor in Tutors)
+            {
+                {
+                    //save number of subjects
+                    lContent.Add(Convert.ToString(lTutor.GetSubjects().Count()));
+
+                    //save tutor name
+                    lContent.Add(lTutor.UserName);
+                    // save price
+                    lContent.Add(lTutor.Price.ToString());
+
+                    foreach (Subject aSubject in lTutor.GetSubjects())
+                    {
+                        //save subject
+                        lContent.Add((Convert.ToInt32(aSubject)).ToString());
+                    }
+                }
+            }
+            DataAccess.Write(aFileName, lContent);
+
+        }
+
+        public void AddTutor(Tutor aTutor)
+        {
+            Tutors.Add(aTutor);
+        }
+
+        public Tutor GetTutor(string UserName)
+        {
+            Tutor Result = new Tutor("");
+            foreach (Tutor lTutor in Tutors)
+            {
+                if (lTutor.UserName == UserName)
+                {
+                    Result = lTutor;
+                    break;
+                }
+            }
+
+            return Result;
+        }
+
         /*
         public void PrintCalendar()
         {
-            
+         
         }
         */
-    }
+        }
 }
