@@ -23,6 +23,9 @@ namespace TUber
             while (!endprogram)
             {
                 {
+
+                    endsession = false;
+
                     Console.WriteLine("Welcome to TUber\n");
                     Console.WriteLine("Pick an option: \n1. Tutor Login\n2. Student Login");
 
