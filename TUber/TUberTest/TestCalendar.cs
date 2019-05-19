@@ -9,17 +9,16 @@ namespace TUberTest
         private readonly string lTutorName = "atutor";
         private readonly string lStudentName = "astudent";
         private readonly int lPrice = 55;
-        private readonly Weekday lWeekDay = Weekday.wednesday;
+        private readonly Weekday lWeekDay = Weekday.Wednesday;
 
         [TestMethod]
         public void TestLoadandSave()
         {
             Calendar lCalendar = new Calendar();
             lCalendar.AddBooking(lTutorName, lStudentName, lPrice, lWeekDay);
-            string lFileName = "database.txt";
-            lCalendar.SaveDays(lFileName);
+            lCalendar.SaveDays(Globals.TEST_FILE_NAME);
             Calendar lNewCalendar = new Calendar();
-            lNewCalendar.LoadDays("database.txt");
+            lNewCalendar.LoadDays(Globals.TEST_FILE_NAME);
 
             Booking lBookingOld = lCalendar.GetBookings(lTutorName, lWeekDay, true);
             Booking lBookingNew = lNewCalendar.GetBookings(lTutorName, lWeekDay, true);

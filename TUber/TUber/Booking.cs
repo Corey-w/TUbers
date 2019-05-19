@@ -45,5 +45,11 @@ namespace TUber
             get { return _price; }
             set { _price = value; }
         }
+
+        public void Print()
+        {
+            Console.WriteLine("Booking for " + StudentName + " with " + TutorName);
+            Console.WriteLine("Price: " + Price + "\n");
+        }
     }
 }
