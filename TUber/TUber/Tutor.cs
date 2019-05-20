@@ -14,7 +14,7 @@ namespace TUber
             fPrice = 0;
             mySubjects = new List<Subject>();
         }
-        
+
         /*
         public string LoadTutor()
         {
@@ -25,18 +25,18 @@ namespace TUber
         public void AddSubject(Subject aSubject)
         {
             mySubjects.Add(aSubject);
-        }
-
-        public List<Subject> GetSubjects()
-        {
-            return mySubjects;
-        }
+        } 
 
         public int Price
         {
             get { return fPrice; }
 
             set { fPrice = value; }
+        }
+
+        public List<Subject> GetSubjects()
+        {
+            return mySubjects;
         }
 
         public override bool Book(Calendar aCalendar)
