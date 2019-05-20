@@ -6,7 +6,6 @@ namespace TUber
 {
     public class Student : User
     {
-        private string userName;
 
         public Student(string aName) : base (aName) {}
 
