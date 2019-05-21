@@ -101,6 +101,7 @@ namespace TUber
                             Globals.END_SESSION = true;
                             Globals.END_PROGRAM = true;
                         }
+
                         else if (choice == 2)
                         {
                             Globals.END_SESSION = true;
