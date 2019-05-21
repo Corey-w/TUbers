@@ -13,8 +13,6 @@ namespace TUberTest
         [TestMethod]
         public void TestAddandGet()
         {
-
-
             Booking lBooking = new Booking(lTutorName, lStudentName, lPrice);
 
             Day lMonday = new Day();

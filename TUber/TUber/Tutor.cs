@@ -6,11 +6,13 @@ namespace TUber
 {
     public class Tutor : User
     {
-        private List<Subject> mySubject;
+        private List<Subject> mySubjects;
         private int fPrice;
 
         public Tutor(string aName) : base (aName)
         {
+            fPrice = 0;
+            mySubjects = new List<Subject>();
         }
 
         /*
@@ -22,7 +24,7 @@ namespace TUber
 
         public void AddSubject(Subject aSubject)
         {
-            mySubject.Add(aSubject);
+            mySubjects.Add(aSubject);
         } 
 
         public int Price
@@ -30,6 +32,11 @@ namespace TUber
             get { return fPrice; }
 
             set { fPrice = value; }
+        }
+
+        public List<Subject> GetSubjects()
+        {
+            return mySubjects;
         }
 
         public override bool Book(Calendar aCalendar)
