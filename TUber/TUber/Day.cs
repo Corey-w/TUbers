@@ -94,7 +94,7 @@ namespace TUber
                     }
                 }
             }
-            else
+            else if(aIsTutor == false)
             //Student
             {
                 foreach (Booking aBooking in _bookings)
@@ -104,6 +104,11 @@ namespace TUber
                         lBooking = aBooking;
                     }
                 }
+            }
+
+            else
+            {
+                lBooking = null;
             }
 
             return lBooking;

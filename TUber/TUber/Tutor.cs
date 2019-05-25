@@ -9,10 +9,9 @@ namespace TUber
         private List<Subject> mySubjects;
         private int fPrice;
 
-        public Tutor(string aName) : base (aName)
+        public Tutor(string aName, int price) : base (aName)
         {
-            fPrice = 0;
-            mySubjects = new List<Subject>();
+            fPrice = price;
         }
 
         /*

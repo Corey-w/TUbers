@@ -193,10 +193,10 @@ namespace TUber
                 while (numberOfTutors < Convert.ToInt32(lContent[0]))
                 {
                     numberOfSubjects = Convert.ToInt32(lContent[line]) + line + 3;
-                    Tutor lTutor = new Tutor(lContent[line + 1])
-                    {
-                        Price = ((Convert.ToInt32(lContent[line + 2])))
-                    };
+                    Tutor lTutor = new Tutor(lContent[line + 1], Convert.ToInt32(lContent[line + 2]));
+                   // {
+                    //    Price = ((Convert.ToInt32(lContent[line + 2])))
+                    //};
 
                     line += 3;
 
@@ -249,7 +249,7 @@ namespace TUber
 
         public Tutor GetTutor(string UserName)
         {
-            Tutor Result = new Tutor("");
+            Tutor Result = new Tutor("", 0);
             foreach (Tutor lTutor in Tutors)
             {
                 if (lTutor.UserName == UserName)
