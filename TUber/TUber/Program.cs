@@ -40,7 +40,9 @@ namespace TUber
 
                     if (choice == 1)
                     {
-                        lUser = new Tutor(username);
+                        Console.WriteLine("Enter price: ");
+                        string price = Console.ReadLine();
+                        lUser = new Tutor(username, Convert.ToInt32(price));
                         isTutor = true;
                     }
                     else
