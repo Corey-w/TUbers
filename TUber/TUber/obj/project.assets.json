@@ -688,23 +688,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\hjjef\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+>>>>>>> 3ac0875e1e6020b42331dd5d2d9a15b44fe66498
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\TUber.csproj",
       "projectName": "TUber",
       "projectPath": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\TUber.csproj",
       "packagesPath": "C:\\Users\\hjjef\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\TUber.csproj",
+      "projectName": "TUber",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\TUber.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\obj\\",
+>>>>>>> 3ac0875e1e6020b42331dd5d2d9a15b44fe66498
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\hjjef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 3ac0875e1e6020b42331dd5d2d9a15b44fe66498
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

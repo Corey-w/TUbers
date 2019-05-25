@@ -15,12 +15,25 @@ namespace TUber
         public Day()
         {
             _numBookings = 0;
-            _name = Weekday.monday;
+            _name = Weekday.Monday;
         }
 
         public Day(Weekday aName)
         {
+            _numBookings = 0;
             _name = aName;
+        }
+
+        public Weekday Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
         }
 
         public int NumBookings()
@@ -48,6 +61,13 @@ namespace TUber
             }
             
             return result;
+        }
+
+        public void RemoveBooking(string aUsername, bool aIsTutor)
+        {
+
+            _bookings.Remove(getBooking(aUsername, aIsTutor));
+            _numBookings--;
         }
 
         //returns a list of all bookings, used for saving
