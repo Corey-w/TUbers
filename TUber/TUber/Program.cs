@@ -48,10 +48,12 @@ namespace TUber
                     else
                     {
                         lUser = new Student(username);
+                        isTutor = false;
                     }
 
                     Calendar lCalendar = new Calendar();
                     lCalendar.LoadDays(Globals.FILE_NAME);
+                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME);
 
                     while (!Globals.END_SESSION)
                     {
@@ -86,7 +88,7 @@ namespace TUber
                                 string tempname = Console.ReadLine();
                                 Console.WriteLine("Enter day for booking: ");
                                 string tempday = Console.ReadLine();
-                                lCalendar.AddBooking(lUser.UserName, tempname, (lUser as Tutor).Price, WeekdayMethods.StringtoWeekday(tempday));
+                                lCalendar.AddBooking(tempname, lUser.UserName, lCalendar.GetTutor(tempname).Price, WeekdayMethods.StringtoWeekday(tempday));
                             }
                             else
                             {
@@ -100,12 +102,16 @@ namespace TUber
                         choice = Convert.ToInt32(Console.ReadLine());
                         if (choice == 3)
                         {
+                            lCalendar.SaveDays(Globals.FILE_NAME);
+                            //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
                             Globals.END_SESSION = true;
                             Globals.END_PROGRAM = true;
                         }
 
                         else if (choice == 2)
                         {
+                            lCalendar.SaveDays(Globals.FILE_NAME);
+                            //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
                             Globals.END_SESSION = true;
                         }
                     }

@@ -72,7 +72,7 @@ namespace TUber
             }
 
         }
-
+        */
         public void SaveDays(string aFileName)
         {
             StreamWriter writer = new StreamWriter(aFileName);
@@ -100,13 +100,14 @@ namespace TUber
                 writer.Close();
             }
         }
-        */
+        
 
         /*Loads saved data into the Days array
         Format: 
         First line declares how many bookings on the day
         next line contains tutor, followed by student, then price. (this is the saved data for one booking
         repeats until all bookings are completed */
+
         public void LoadDays(string aFileName)
         {
             if (DataAccess.Check(aFileName) == true)
@@ -128,8 +129,9 @@ namespace TUber
                 }
             }
         }
+        
 
- 
+        /*
         public void SaveDays(string aFileName)
         {
             List <string> lContent = new List<string>();
@@ -153,7 +155,7 @@ namespace TUber
             DataAccess.Write(aFileName, lContent);
          
         }
-        
+        */
         //Adds booking under the tutors name and the students on a given day. Stores price.
         public void  AddBooking(string aTutorName, string aUserName, int aPrice, Weekday aDay)
         {
