@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hjjef\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\TUber.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\TUber.csproj",
       "projectName": "TUber",
-      "projectPath": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\TUber.csproj",
-      "packagesPath": "C:\\Users\\hjjef\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\TUber.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\TUbers\\TUber\\TUber\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\hjjef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -741,13 +741,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\hjjef\\Documents\\Projects\\TUbers\\TUber\\TUber\\obj\\TUber.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

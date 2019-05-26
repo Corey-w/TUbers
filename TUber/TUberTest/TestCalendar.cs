@@ -19,7 +19,7 @@ namespace TUberTest
         public void TestLoadandSaveTutor()
         {
             Calendar lCalendar = new Calendar();
-            Tutor lTutor = new Tutor(lTutorName);
+            Tutor lTutor = new Tutor(lTutorName, lPrice);
 
             lTutor.Price = lPrice;
             lTutor.AddSubject(lSubject1);
@@ -38,7 +38,7 @@ namespace TUberTest
             Calendar lCalendar = new Calendar();
 
             //create a new tutor with different values
-            Tutor lTutor2 = new Tutor(lTutorName2);
+            Tutor lTutor2 = new Tutor(lTutorName2,lPrice);
 
             lTutor2.Price = lPrice + 100;
             //as of this iteration repeated subjects are not expected to be caught

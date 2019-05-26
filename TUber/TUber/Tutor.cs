@@ -6,7 +6,7 @@ namespace TUber
 {
     public class Tutor : User
     {
-        private List<Subject> mySubjects;
+        private List<Subject> mySubjects = new List<Subject>();
         private int fPrice;
 
         public Tutor(string aName, int price) : base (aName)
