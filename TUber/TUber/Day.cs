@@ -65,9 +65,16 @@ namespace TUber
 
         public void RemoveBooking(string aUsername, bool aIsTutor)
         {
-
-            _bookings.Remove(getBooking(aUsername, aIsTutor));
-            _numBookings--;
+            if (getBooking(aUsername, aIsTutor) != null)
+            {
+                _bookings.Remove(getBooking(aUsername, aIsTutor));
+                _numBookings--;
+                //cout booking removed
+            }
+            else
+            {
+                //cout booking does not exist
+            }
         }
 
         //returns a list of all bookings, used for saving
