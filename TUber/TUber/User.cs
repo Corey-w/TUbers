@@ -26,5 +26,9 @@ namespace TUber
         }
 
         public abstract bool Book(Calendar aCalendar);
+
+        virtual public void AddSubject(Subject aSubject)
+        {
+        }
     }
 }

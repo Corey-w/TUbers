@@ -38,6 +38,9 @@ namespace TUber
                         Console.WriteLine("Enter price: ");
                         string price = Console.ReadLine();
                         lUser = new Tutor(username, Convert.ToInt32(price));
+                        Console.WriteLine("Add a subject, 1.Science, 2.law, 3.English, 4.Math: ");
+                        int lSubject = Convert.ToInt32(Console.ReadLine());
+                        lUser.AddSubject((Subject)lSubject);
                         isTutor = true;
                     }
                     else
@@ -48,25 +51,39 @@ namespace TUber
 
                     Calendar lCalendar = new Calendar();
                     lCalendar.LoadDays(Globals.FILE_NAME);
-                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME); //
+                    lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME);
+
+                    if (isTutor)
+                    {
+                        lCalendar.AddTutor((Tutor)lUser);
+                    }
+
+                    lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
 
                     while (!Globals.END_SESSION)
                     {
                         Console.WriteLine("System wide bookings: \n");
                         lCalendar.Print();
-                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout\n4. Quit\n");
+                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Show Tutors List \n4. Logout \n5. Quit\n");
                         choice = Convert.ToInt32(Console.ReadLine());
 
-                        if(choice == 4)
+                        if(choice == 5)
                         {
                             lCalendar.SaveDays(Globals.FILE_NAME);
                             Globals.END_PROGRAM = true;
                             Globals.END_SESSION = true;
                         }
-                        else if (choice == 3)
+                        else if (choice == 4)
                         {
                             lCalendar.SaveDays(Globals.FILE_NAME);
                             Globals.END_SESSION = true;
+                        }
+                        else if (choice == 3)
+                        {
+                            Console.WriteLine("\n");
+                            lCalendar.ShowTutors();
+                            Console.WriteLine("\n1. Press any button to continue\n");
+                            Console.ReadLine();
                         }
 
                         else
@@ -92,7 +109,7 @@ namespace TUber
                             else
                             {
 
-                                if (choice == 3)
+                                if (choice == 4)
                                 {
                                     Globals.END_SESSION = true;
                                 }
