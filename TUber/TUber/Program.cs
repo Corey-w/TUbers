@@ -80,7 +80,10 @@ namespace TUber
                         }
                         else if (choice == 3)
                         {
+                            Console.WriteLine("\n");
                             lCalendar.ShowTutors();
+                            Console.WriteLine("\n1. Press any button to continue\n");
+                            Console.ReadLine();
                         }
 
                         else
