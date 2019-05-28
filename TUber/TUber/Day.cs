@@ -65,8 +65,12 @@ namespace TUber
 
         public void RemoveBooking(string aUsername, bool aIsTutor)
         {
-
-            _bookings.Remove(getBooking(aUsername, aIsTutor));
+            Booking lBooking = getBooking(aUsername, aIsTutor);
+            if(lBooking != null)
+            {
+                _bookings.Remove(getBooking(aUsername, aIsTutor));
+            }
+   
             _numBookings--;
         }
 
@@ -81,6 +85,7 @@ namespace TUber
         {
             //if there are no bookings, the tutor and student will be blank with a price of 0
             Booking lBooking = new Booking();
+            lBooking = null;
             
             //Tutor
             if (aIsTutor == true)
@@ -94,7 +99,7 @@ namespace TUber
                     }
                 }
             }
-            else
+            else if(aIsTutor == false)
             //Student
             {
                 foreach (Booking aBooking in _bookings)
