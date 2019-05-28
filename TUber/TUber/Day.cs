@@ -69,9 +69,8 @@ namespace TUber
             if(lBooking != null)
             {
                 _bookings.Remove(getBooking(aUsername, aIsTutor));
+                _numBookings--;
             }
-   
-            _numBookings--;
         }
 
         //returns a list of all bookings, used for saving
