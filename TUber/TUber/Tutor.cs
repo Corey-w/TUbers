@@ -21,7 +21,7 @@ namespace TUber
         }
         */
 
-        public void AddSubject(Subject aSubject)
+        public override void AddSubject(Subject aSubject) 
         {
             mySubjects.Add(aSubject);
         } 
