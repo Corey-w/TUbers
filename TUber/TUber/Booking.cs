@@ -50,7 +50,7 @@ namespace TUber
         {
             Console.WriteLine("Booking for student: " + StudentName + " with tutor: " + TutorName);
 
-            Console.WriteLine("Price: " + Price + "$\n");
+            Console.WriteLine("Price: $" + Price + "\n");
         }
     }
 }

@@ -273,7 +273,7 @@ namespace TUber
                 {
                     Console.Write(lSubject + " ");
                 }
-                Console.Write("at " + lTutor.Price + "$ a booking\n");
+                Console.Write("at $" + lTutor.Price + " a booking\n");
             }
         }
 
