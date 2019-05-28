@@ -11,12 +11,7 @@ namespace TUber
         static void Main(string[] args)
         {
             bool isTutor = false;
-            /*
-            Calendar lCalendar = new Calendar();
-            lCalendar.AddBooking("James", "John", 120, Weekday.Friday);
-            lCalendar.AddBooking("Corey", "Ryan", 60, Weekday.Wednesday);
-            lCalendar.AddBooking("Henry", "Aaron", 24, Weekday.Monday);
-            */
+
             while (!Globals.END_PROGRAM)
             {
                 {
@@ -53,66 +48,87 @@ namespace TUber
 
                     Calendar lCalendar = new Calendar();
                     lCalendar.LoadDays(Globals.FILE_NAME);
-                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME);
+                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME); //
 
                     while (!Globals.END_SESSION)
                     {
-                        Console.WriteLine("Current Schedule: \n");
+                        Console.WriteLine("System wide bookings: \n");
                         lCalendar.Print();
-                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n");
+                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout\n4. Quit\n");
                         choice = Convert.ToInt32(Console.ReadLine());
 
-                        if (isTutor)
+                        if(choice == 4)
                         {
-                            if (choice == 1)
-                            {
-                                Console.WriteLine("Enter students name: ");
-                                string tempname = Console.ReadLine();
-                                Console.WriteLine("Enter day for booking: ");
-                                string tempday = Console.ReadLine();
-                                lCalendar.AddBooking(lUser.UserName, tempname, (lUser as Tutor).Price, WeekdayMethods.StringtoWeekday(tempday));
-                            }
-                            else
-                            {
-                                Console.WriteLine("Enter day the booking is on: ");
-                                string tempday = Console.ReadLine();
-                                lCalendar.RemoveBooking(lUser.UserName, WeekdayMethods.StringtoWeekday(tempday), true);
-                            }
+                            lCalendar.SaveDays(Globals.FILE_NAME);
+                            Globals.END_PROGRAM = true;
+                            Globals.END_SESSION = true;
+                        }
+                        else if (choice == 3)
+                        {
+                            lCalendar.SaveDays(Globals.FILE_NAME);
+                            Globals.END_SESSION = true;
                         }
 
                         else
                         {
-                            if (choice == 1)
+                            if (isTutor)
                             {
-                                Console.WriteLine("Enter tutors name: ");
-                                string tempname = Console.ReadLine();
-                                Console.WriteLine("Enter day for booking: ");
-                                string tempday = Console.ReadLine();
-                                lCalendar.AddBooking(tempname, lUser.UserName, lCalendar.GetTutor(tempname).Price, WeekdayMethods.StringtoWeekday(tempday));
+                                if (choice == 1)
+                                {
+                                    Console.WriteLine("Enter students name: ");
+                                    string tempname = Console.ReadLine();
+                                    Console.WriteLine("Enter day for booking: ");
+                                    string tempday = Console.ReadLine();
+                                    lCalendar.AddBooking(lUser.UserName, tempname, (lUser as Tutor).Price, WeekdayMethods.StringtoWeekday(tempday));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Enter day the booking is on: ");
+                                    string tempday = Console.ReadLine();
+                                    lCalendar.RemoveBooking(lUser.UserName, WeekdayMethods.StringtoWeekday(tempday), true);
+                                }
                             }
+
                             else
                             {
-                                Console.WriteLine("Enter day the booking is on: ");
-                                string tempday = Console.ReadLine();
-                                lCalendar.RemoveBooking(lUser.UserName, WeekdayMethods.StringtoWeekday(tempday), false);
+
+                                if (choice == 3)
+                                {
+                                    Globals.END_SESSION = true;
+                                }
+
+                                else if (choice == 1)
+                                {
+                                    Console.WriteLine("Enter tutors name: ");
+                                    string tempname = Console.ReadLine();
+                                    Console.WriteLine("Enter day for booking: ");
+                                    string tempday = Console.ReadLine();
+                                    lCalendar.AddBooking(tempname, lUser.UserName, lCalendar.GetTutor(tempname).Price, WeekdayMethods.StringtoWeekday(tempday));
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Enter day the booking is on: ");
+                                    string tempday = Console.ReadLine();
+                                    lCalendar.RemoveBooking(lUser.UserName, WeekdayMethods.StringtoWeekday(tempday), false);
+                                }
                             }
-                        }
 
-                        Console.WriteLine("1. Continue\n2. Logout\n3. Quit");
-                        choice = Convert.ToInt32(Console.ReadLine());
-                        if (choice == 3)
-                        {
-                            lCalendar.SaveDays(Globals.FILE_NAME);
-                            //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
-                            Globals.END_SESSION = true;
-                            Globals.END_PROGRAM = true;
-                        }
+                            Console.WriteLine("1. Continue\n2. Logout\n3. Quit");
+                            choice = Convert.ToInt32(Console.ReadLine());
+                            if (choice == 3)
+                            {
+                                lCalendar.SaveDays(Globals.FILE_NAME);
+                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);//
+                                Globals.END_SESSION = true;
+                                Globals.END_PROGRAM = true;
+                            }
 
-                        else if (choice == 2)
-                        {
-                            lCalendar.SaveDays(Globals.FILE_NAME);
-                            //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
-                            Globals.END_SESSION = true;
+                            else if (choice == 2)
+                            {
+                                lCalendar.SaveDays(Globals.FILE_NAME);
+                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME); //
+                                Globals.END_SESSION = true;
+                            }
                         }
                     }
                 }
