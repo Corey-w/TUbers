@@ -57,7 +57,7 @@ namespace TUber
 
                     while (!Globals.END_SESSION)
                     {
-                        Console.WriteLine("Current Schedule: \n");
+                        Console.WriteLine("System wide bookings: \n");
                         lCalendar.Print();
                         Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout");
                         choice = Convert.ToInt32(Console.ReadLine());

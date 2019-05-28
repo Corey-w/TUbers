@@ -48,7 +48,7 @@ namespace TUber
 
         public void Print()
         {
-            Console.WriteLine("Booking for " + StudentName + " with " + TutorName);
+            Console.WriteLine("Booking for student: " + StudentName + " with tutor: " + TutorName);
             Console.WriteLine("Price: " + Price + "\n");
         }
     }
