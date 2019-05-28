@@ -59,12 +59,18 @@ namespace TUber
                     {
                         Console.WriteLine("Current Schedule: \n");
                         lCalendar.Print();
-                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n");
+                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout");
                         choice = Convert.ToInt32(Console.ReadLine());
 
                         if (isTutor)
                         {
-                            if (choice == 1)
+
+                            if(choice == 3)
+                            {
+                                Globals.END_SESSION = true;
+                            }
+
+                            else if (choice == 1)
                             {
                                 Console.WriteLine("Enter students name: ");
                                 string tempname = Console.ReadLine();
@@ -82,7 +88,13 @@ namespace TUber
 
                         else
                         {
-                            if (choice == 1)
+
+                            if (choice == 3)
+                            {
+                                Globals.END_SESSION = true;
+                            }
+
+                            else if (choice == 1)
                             {
                                 Console.WriteLine("Enter tutors name: ");
                                 string tempname = Console.ReadLine();
