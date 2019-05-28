@@ -11,12 +11,7 @@ namespace TUber
         static void Main(string[] args)
         {
             bool isTutor = false;
-            /*
-            Calendar lCalendar = new Calendar();
-            lCalendar.AddBooking("James", "John", 120, Weekday.Friday);
-            lCalendar.AddBooking("Corey", "Ryan", 60, Weekday.Wednesday);
-            lCalendar.AddBooking("Henry", "Aaron", 24, Weekday.Monday);
-            */
+
             while (!Globals.END_PROGRAM)
             {
                 {
@@ -53,17 +48,24 @@ namespace TUber
 
                     Calendar lCalendar = new Calendar();
                     lCalendar.LoadDays(Globals.FILE_NAME);
-                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME);
+                    //lCalendar.LoadTutors(Globals.TUTOR_FILE_NAME); //
 
                     while (!Globals.END_SESSION)
                     {
                         Console.WriteLine("System wide bookings: \n");
                         lCalendar.Print();
-                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout");
+                        Console.WriteLine("1. Make Booking \n2. Remove Booking \n3. Logout\n4. Quit\n");
                         choice = Convert.ToInt32(Console.ReadLine());
 
-                        if (choice == 3)
+                        if(choice == 4)
                         {
+                            lCalendar.SaveDays(Globals.FILE_NAME);
+                            Globals.END_PROGRAM = true;
+                            Globals.END_SESSION = true;
+                        }
+                        else if (choice == 3)
+                        {
+                            lCalendar.SaveDays(Globals.FILE_NAME);
                             Globals.END_SESSION = true;
                         }
 
@@ -116,7 +118,7 @@ namespace TUber
                             if (choice == 3)
                             {
                                 lCalendar.SaveDays(Globals.FILE_NAME);
-                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
+                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);//
                                 Globals.END_SESSION = true;
                                 Globals.END_PROGRAM = true;
                             }
@@ -124,7 +126,7 @@ namespace TUber
                             else if (choice == 2)
                             {
                                 lCalendar.SaveDays(Globals.FILE_NAME);
-                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME);
+                                //lCalendar.SaveTutors(Globals.TUTOR_FILE_NAME); //
                                 Globals.END_SESSION = true;
                             }
                         }
