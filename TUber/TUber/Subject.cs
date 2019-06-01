@@ -6,6 +6,7 @@ namespace TUber
 {
     public enum Subject
     {
+        none,
         Science,
         Law,
         English,

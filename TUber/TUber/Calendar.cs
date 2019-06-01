@@ -264,6 +264,18 @@ namespace TUber
             return Result;
         }
 
+        public void ShowTutors()
+        {
+            foreach(Tutor lTutor in Tutors)
+            {
+                Console.Write(lTutor.UserName + " teaches ");
+                foreach (Subject lSubject in lTutor.GetSubjects())
+                {
+                    Console.Write(lSubject + " ");
+                }
+                Console.Write("at $" + lTutor.Price + " a booking\n");
+            }
+        }
 
 
         public void Print()
@@ -272,9 +284,9 @@ namespace TUber
             {
                 if (aDay.NumBookings() != 0)
                 {
-                    Console.Write(aDay.Name + ": ");
                     foreach (Booking aBooking in aDay.getAllBookings())
                     {
+                        Console.Write(aDay.Name + ": ");
                         aBooking.Print();
                     }
                 }
